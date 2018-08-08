@@ -1,0 +1,40 @@
+#about{
+}
+#right_column{
+    width: 50%;
+    float: right;
+}
+#sig {
+    text-align: right;
+    font-family: Amatic SC, sans-serif;
+    margin-left: 45%;
+    border-top: solid #e8e8e8 1px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-right:5px;
+    margin-bottom: 5px;
+}
+#right_column p{
+    padding-left: 15px;
+}
+#left_column{
+    width: 50%;
+    float: ;
+}
+#left_column img{
+    width: 95%;
+    padding-top: 20px;
+    margin: auto;
+}
+#email{
+    text-align: right;
+    font-size: .8em;
+    padding-right: 5px;
+}
+#email a{
+    text-decoration: none;
+    color: black;
+}
+#email a:hover{
+    color: #c8c8c8
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Header</title>
+	<!-- css -->
+    <link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
+    <!-- scripts -->
+    <script>
+        function worksdropdownclick() {
+            document.getElementById("worksdropdown").classList.toggle("show");
+            if (document.getElementById("storedropdown").classList.contains('show')) {
+                document.getElementById("storedropdown").classList.remove('show');
+            }
+        }
+        function storedropdownclick() {
+            document.getElementById("storedropdown").classList.toggle("show");
+            if (document.getElementById("worksdropdown").classList.contains('show')) {
+                document.getElementById("worksdropdown").classList.remove('show');
+            }
+        }
+        window.onclick = function(e) {
+            if (!e.target.matches('.navitem')) {
+                var worksDropdown = document.getElementById("worksdropdown");
+                var storeDropdown = document.getElementById("storedropdown");
+                if (worksDropdown.classList.contains('show')) {
+                    worksDropdown.classList.remove('show');
+                }
+                if (storeDropdown.classList.contains('show')) {
+                    storeDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+	<div id="topbar">
+        <div class="fixedwidth">
+            <div id="sitename">
+                <h1><a href="main.html">Winni Art</a></h1>
+            </div>
+            <div id="nav">
+                <a onclick="worksdropdownclick()" class="navitem rightdivide">Works</a>
+                <div id="worksdropdown" class="dropdown-content">
+                    <a href="characterdesign.html">Character Design</a>
+                    <a href="fanart.html">Fan Art</a>
+                    <a href="weddinginvites.html">Wedding Invitations</a>
+                </div>
+                <a onclick="storedropdownclick()" class="navitem rightdivide">Store</a>
+                <div id="storedropdown" class="dropdown-content">
+                    <a href="commissions.html">Commissions</a>
+                    <a href="purchases.html">Purchases</a>
+                </div>
+                <a href="about.html" class="navitem">About</a>
+            </div>
+            <div id="socialmedia">
+                <a href="https://www.deviantart.com/winnicdm" target="_blank"><img src="../images/dasymbol.png" class="smicon" alt="deviantArt" title="deviantArt" /></a>
+                <a href="https://www.instagram.com/winnicdmart/" target="_blank"><img src="../images/instasymbol.png" class="smicon" alt="Instagram" title="Instagram"/></a>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
