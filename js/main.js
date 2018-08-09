@@ -24,12 +24,12 @@
     }
     
     function showGenreDetail(selected) {
-        document.getElementById("fanart_genre").classList.remove("show");
-        document.getElementById("character_creation_genre").classList.remove("show");
-        document.getElementById("invitation_genre").classList.remove("show");
-        document.getElementById("other_genre").classList.remove("show");
+        document.getElementById("fanart").style.display="none";
+        document.getElementById("cc").style.display="none";
+        document.getElementById("invitation").style.display="none";
+        document.getElementById("other").style.display="none";
 
-        document.getElementById(selected).classList.add("show");
+        document.getElementById(selected).style.display="block";;
     }
     function showStyleDetail(selected) {
         document.getElementById("sketch_style").classList.remove("show");
@@ -45,7 +45,7 @@
         console.log("Function is being called")
         var styleHidden = document.getElementById("style");
         var otherHidden = document.getElementById("other");
-        if (selectedItem.value == "invitation" || selectedItem.value == "- Genre -"){
+        if (selectedItem.value == "invitation" || selectedItem.value == "none"){
             styleHidden.style.display="none"
             otherHidden.style.display="none";
         }

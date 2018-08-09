@@ -34,7 +34,7 @@
                     <input type="email" id="email-input" name="email" class="commission-form-input" title="Please enter your email" placeholder="Email" required/>
                 </div>
                 <div id="genre" class="questions">
-                    <select name="genre" id="genre-input" onchange="displayHidden(this);" class="commission-form-dropdown" title="Please choose the genre of art" >
+                    <select name="genre" id="genre-input" onchange="displayHidden(this); showGenreDetail(this.value)" class="commission-form-dropdown" title="Please choose the genre of art" >
                         <option value="none">- Genre -</option>
                         <option value="fanart">Fanart</option>
                         <option value="cc">Character Creation</option>
