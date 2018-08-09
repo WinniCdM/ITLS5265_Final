@@ -6,6 +6,7 @@
     
 	<!-- css -->
 	<link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/commissions.css">
     
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,7 +16,6 @@
             $("#footer").load("footer.html");
         });
     </script>
-    
 </head>
 <body>
     <div id="header"></div>
@@ -23,8 +23,81 @@
         <div class="fixedwidth">
             <div class="page_description">
                 <h1 class="page_title">Commissions</h1>
-                <p></p>
+                <p>Here you can submit a request for a commission. This can be anywhere from a simple sketch to a full scale scene painting. I currently only offer commissions in the digital medium. Please fill out the below form completely, and submit. I will get back to you as soon as I can.</p>
+                <p>My prices average at about $30 per hour.</p>
             </div>
+            <form name="commissionform" id="commissionform" method="post" action="https://elearn.usu.edu/courses/itls-5265/forms/form_results.php">
+                <div id="full_name" class="questions">
+                    <input type="text" id="name-input" name="name" class="commission-form-input" title="Please enter your name" placeholder="Name" required/>
+                </div>
+                <div id="email" class="questions">
+                    <input type="email" id="email-input" name="email" class="commission-form-input" title="Please enter your email" placeholder="Email" required/>
+                </div>
+                <div id="genre" class="questions">
+                    <select name="genre" id="genre-input" onchange="displayHidden(this);" class="commission-form-dropdown" title="Please choose the genre of art" >
+                        <option value="none">- Genre -</option>
+                        <option value="fanart">Fanart</option>
+                        <option value="cc">Character Creation</option>
+                        <option value="invitation">Invitations</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>  
+                <div id="style" class="questions styleHidden">
+                    <select name="style" id="style-input" class="commission-form-dropdown" title="Please choose the style of art" >
+                        <option>- Style -</option>
+                        <option>Sketch</option>
+                        <option>Line Art</option>
+                        <option>Flat Color</option>
+                        <option>Cell Shading</option>
+                        <option>Full Color and Shading</option>
+                        <option>Full Render</option>
+                    </select>
+                </div>
+                <div id="other" class="questions otherHidden">
+                    <input type="text" id="other_genre-input" name="other_genre" class="commission-form-input" title="Please enter other genre detail" placeholder="Other Genre Information"/>
+                </div>
+                <div id="details" class="questions">
+                    <textarea name="details" id="details-input" rows="15" cols="60" class="commission-form-input" placeholder="Please provide details of your commission. Be as detailed as possible" required></textarea>
+                </div>
+                <div id="disclosure">
+                    <h4>Disclosure:</h4>
+                    <p>The artist, henceforth known as "I", will provide a price upon initial contact. Some light negotiating is allowed, however, I hold the right to set the final price. I hold the right to accept or deny any commission made. Half payment is required after a price is agreed upon and before I begin the process. The rest is required after a rough sketch is approved.</p>
+                    <p>I am willing to draw just about anything, but know I am best with humanoids, dragon-esk creatures, and just about any sort of winged creature. I will not do any form of nudity or sexual content, at all. </p>
+                    <p>Please allow 2 to 4 weeks for completion based on complexity. I draw and paint as a hobby and do not do this full time, so please be patient with me. I will be as quick as I can.</p>
+                </div>
+                <div id="acknowledgement">
+                    <input type="checkbox" name="option[]" class="acknowledge" value="Agree" required>I have read and agree to the above disclosure.
+                </div>
+                <div id="buttons">
+                    <input type="submit" name="submit" value="Submit" disabled/>
+            <input type="reset" />
+                </div>
+            </form>
+            <div id="details_of_selected">
+                <h1>Details:</h1>
+                <div id="genre_details">
+                    <h2>Genre:</h2>
+                    <div id="genre_selected_options">
+                        <div id="fanart_genre">Your commission will be of a beloved character, location or scene from your favorite book, story, game, tv show or movie.</div>
+                        <div id="character_creation_genre">Your commission will be of a character of your own making or, if you wish, a character I design. Please be very detailed in your description.</div>
+                        <div id="invitation_genre">Your commission will be an invitation to an event that is happening in your life.</div>
+                        <div id="other_genre">Your commission will be in a genre that does not fit in to any of the others mentioned. Please be descriptive when filling out the rest of the form</div>
+                    </div>
+                </div>
+                <div id="style_details">
+                    <h2>Style:</h2>
+                    <div id="style_selected_options">
+                        <div id="sketch_style">This will be a simple sketch and with no color.</div>
+                        <div id="line_art_style">This will be a refined sketch with inked lines and no color.</div>
+                        <div id="flat_color_style">This will be an inked sketch with flat colors and no shading.</div>
+                        <div id="cell_shading_style">This will be an inked sketch with flat colors and cell shading. (Think of a cartoon)</div>
+                        <div id="lined_full_color_style">This will be an inked, colored and shaded piece.</div>
+                        <div id="full_render_style">This will be a full rendered piece. No line work.</div>
+                    </div>
+                </div>
+                <div id="estimate_price">Your estimated price: $<a id="price">0.00</a></div>
+            </div>
+            
         </div>
     </div>
     <div id="footer"></div>

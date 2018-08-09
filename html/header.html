@@ -8,32 +8,7 @@
 	<link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
     <!-- scripts -->
-    <script>
-        function worksdropdownclick() {
-            document.getElementById("worksdropdown").classList.toggle("show");
-            if (document.getElementById("storedropdown").classList.contains('show')) {
-                document.getElementById("storedropdown").classList.remove('show');
-            }
-        }
-        function storedropdownclick() {
-            document.getElementById("storedropdown").classList.toggle("show");
-            if (document.getElementById("worksdropdown").classList.contains('show')) {
-                document.getElementById("worksdropdown").classList.remove('show');
-            }
-        }
-        window.onclick = function(e) {
-            if (!e.target.matches('.navitem')) {
-                var worksDropdown = document.getElementById("worksdropdown");
-                var storeDropdown = document.getElementById("storedropdown");
-                if (worksDropdown.classList.contains('show')) {
-                    worksDropdown.classList.remove('show');
-                }
-                if (storeDropdown.classList.contains('show')) {
-                    storeDropdown.classList.remove('show');
-                }
-            }
-        }
-    </script>
+    <script src="../js/main.js"></script>
 </head>
 <body>
 	<div id="topbar">
