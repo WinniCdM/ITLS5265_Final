@@ -58,6 +58,3 @@
             otherHidden.style.display="none";
         }
     }
-    function showOptionsInput() {
-        document.getElementById("other").classList.add("show");
-    }
