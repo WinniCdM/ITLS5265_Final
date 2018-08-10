@@ -28,9 +28,15 @@ form{
 #style_details div, #genre_details div{
     padding-top: 5px;
     padding-bottom: 5px;
-    display: none;
 }
-#estimate_price a{
+#estimate_price{
+    float: left;
+    border-top: solid #e8e8e8 1px;
+    padding-top: 10px;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+#estimate_price span{
     font-size: 1.5em;
     padding-left: 5px;
     font-weight: bold;
@@ -73,9 +79,6 @@ form{
     font-size: .8em;
     margin: 10px;
 }
-.acknowledge{
-    background-color: none;
-}
 #buttons{
     padding-left: 10px;
 }
@@ -97,5 +100,8 @@ form{
     cursor: not-allowed;
 }
 .styleHidden, .otherHidden{
+    display: none;
+}
+.genreHideable, .styleHideable{
     display: none;
 }

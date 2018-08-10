@@ -34,23 +34,23 @@
                     <input type="email" id="email-input" name="email" class="commission-form-input" title="Please enter your email" placeholder="Email" required/>
                 </div>
                 <div id="genre" class="questions">
-                    <select name="genre" id="genre-input" onchange="displayHidden(this); showGenreDetail(this.value);" class="commission-form-dropdown" title="Please choose the genre of art" >
-                        <option value="none">- Genre -</option>
-                        <option value="fanart">Fanart</option>
-                        <option value="cc">Character Creation</option>
-                        <option value="invitation">Invitations</option>
-                        <option value="other">Other</option>
+                    <select name="genre" id="genre-input" onchange="displayHiddenFields(this); showGenreDetail(this);" class="commission-form-dropdown calculate" title="Please choose the genre of art" required>
+                        <option value="" data-price="-30">- Genre -</option>
+                        <option value="fanart_genre" data-price="20">Fanart</option>
+                        <option value="character_creation_genre" data-price="30">Character Creation</option>
+                        <option value="invitation_genre" data-price="10">Invitations</option>
+                        <option value="other_genre" data-price="50">Other</option>
                     </select>
                 </div>  
                 <div id="style" class="questions styleHidden">
-                    <select name="style" id="style-input" class="commission-form-dropdown" title="Please choose the style of art" >
-                        <option>- Style -</option>
-                        <option>Sketch</option>
-                        <option>Line Art</option>
-                        <option>Flat Color</option>
-                        <option>Cell Shading</option>
-                        <option>Full Color and Shading</option>
-                        <option>Full Render</option>
+                    <select name="style" id="style-input" onchange="showStyleDetail(this);" class="commission-form-dropdown calculate" title="Please choose the style of art">
+                        <option value="" data-price="0">- Style -</option>
+                        <option value="sketch_style" data-price="20">Sketch</option>
+                        <option value="line_art_style" data-price="30">Line Art</option>
+                        <option value="flat_color_style" data-price="50">Flat Color</option>
+                        <option value="cell_shading_style" data-price="70">Cell Shading</option>
+                        <option value="lined_full_color_style" data-price="80">Full Color and Shading</option>
+                        <option value="full_render_style" data-price="100">Full Render</option>
                     </select>
                 </div>
                 <div id="other" class="questions otherHidden">
@@ -69,35 +69,33 @@
                     <input type="checkbox" name="option[]" class="acknowledge" value="Agree" required>I have read and agree to the above disclosure.
                 </div>
                 <div id="buttons">
-                    <input type="submit" name="submit" value="Submit" disabled/>
-            <input type="reset" />
+                    <input type="submit" name="submit" value="Submit" />
                 </div>
             </form>
             <div id="details_of_selected">
                 <h1>Details:</h1>
                 <div id="genre_details">
-                    <h2>Genre:</h2>
+                    <h2 id="genreDetailTitle">Genre:</h2>
                     <div id="genre_selected_options">
-                        <div id="fanart_genre">Your commission will be of a beloved character, location or scene from your favorite book, story, game, tv show or movie.</div>
-                        <div id="character_creation_genre">Your commission will be of a character of your own making or, if you wish, a character I design. Please be very detailed in your description.</div>
-                        <div id="invitation_genre">Your commission will be an invitation to an event that is happening in your life.</div>
-                        <div id="other_genre">Your commission will be in a genre that does not fit in to any of the others mentioned. Please be descriptive when filling out the rest of the form</div>
+                        <div id="fanart_genre" class="genreHideable">Your commission will be of a beloved character, location or scene from your favorite book, story, game, tv show or movie.</div>
+                        <div id="character_creation_genre" class="genreHideable">Your commission will be of a character of your own making or, if you wish, a character I design. Please be very detailed in your description.</div>
+                        <div id="invitation_genre" class="genreHideable">Your commission will be an invitation to an event that is happening in your life.</div>
+                        <div id="other_genre" class="genreHideable">Your commission will be in a genre that does not fit in to any of the others mentioned. Please be descriptive when filling out the rest of the form</div>
                     </div>
                 </div>
                 <div id="style_details">
-                    <h2>Style:</h2>
+                    <h2 id="styleDetailTitle">Style:</h2>
                     <div id="style_selected_options">
-                        <div id="sketch_style">This will be a simple sketch and with no color.</div>
-                        <div id="line_art_style">This will be a refined sketch with inked lines and no color.</div>
-                        <div id="flat_color_style">This will be an inked sketch with flat colors and no shading.</div>
-                        <div id="cell_shading_style">This will be an inked sketch with flat colors and cell shading. (Think of a cartoon)</div>
-                        <div id="lined_full_color_style">This will be an inked, colored and shaded piece.</div>
-                        <div id="full_render_style">This will be a full rendered piece. No line work.</div>
+                        <div id="sketch_style" class="styleHideable">This will be a simple sketch and with no color.</div>
+                        <div id="line_art_style" class="styleHideable">This will be a refined sketch with inked lines and no color.</div>
+                        <div id="flat_color_style" class="styleHideable">This will be an inked sketch with flat colors and no shading.</div>
+                        <div id="cell_shading_style" class="styleHideable">This will be an inked sketch with flat colors and cell shading. (Think of a cartoon)</div>
+                        <div id="lined_full_color_style" class="styleHideable">This will be an inked, colored and shaded piece.</div>
+                        <div id="full_render_style" class="styleHideable">This will be a full rendered piece. No line work.</div>
                     </div>
                 </div>
-                <div id="estimate_price">Your estimated price: $<a id="price">0.00</a></div>
+                <div id="estimate_price">Your estimated price: $<span id="price">0.00</span></div>
             </div>
-            
         </div>
     </div>
     <div id="footer"></div>
